@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.ui.fragments.pictureoftheday
+package geekbrians.slava_5655380.ui.fragments.home
 
 import geekbrians.slava_5655380.domain.model.PODServerResponseData
 
