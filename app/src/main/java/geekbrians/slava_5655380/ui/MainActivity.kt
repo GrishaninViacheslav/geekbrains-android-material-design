@@ -1,7 +1,8 @@
-package geekbrians.slava_5655380
+package geekbrians.slava_5655380.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import geekbrians.slava_5655380.R
 import geekbrians.slava_5655380.ui.fragments.pictureoftheday.PictureOfTheDayFragment
 
 class MainActivity : AppCompatActivity() {
