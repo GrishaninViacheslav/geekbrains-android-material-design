@@ -2,12 +2,14 @@ package geekbrians.slava_5655380.ui
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
 import geekbrians.slava_5655380.R
 import geekbrians.slava_5655380.ui.fragments.PagerAdapter
@@ -23,6 +25,31 @@ class PartThreeActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         initViewPagerAndTabs()
+        findViewById<BottomNavigationView>(R.id.bottom_navigation_view).setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bottom_view_main -> {
+                    Log.d("[MYLOG]", "bottom_navigation_view bottom_view_main tapped")
+                    true
+                }
+                R.id.bottom_view_earth -> {
+                    Log.d("[MYLOG]", "bottom_navigation_view bottom_view_earth tapped")
+                    true
+                }
+                R.id.bottom_view_moon -> {
+                    Log.d("[MYLOG]", "bottom_navigation_view bottom_view_moon tapped")
+                    true
+                }
+                R.id.bottom_view_mars -> {
+                    Log.d("[MYLOG]", "bottom_navigation_view bottom_view_mars tapped")
+                    true
+                }
+                R.id.bottom_view_space -> {
+                    Log.d("[MYLOG]", "bottom_navigation_view bottom_view_space tapped")
+                    true
+                }
+                else -> false
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
