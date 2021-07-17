@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.googleplusdemo;
+package geekbrians.slava_5655380;
 
 import android.app.Application;
 import timber.log.Timber;

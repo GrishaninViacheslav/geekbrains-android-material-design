@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.googleplusdemo;
+package geekbrians.slava_5655380.ui.mainactivity;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +15,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 import geekbrians.slava_5655380.R;
+import geekbrians.slava_5655380.TimberLogger;
 
 public class DashboardFragment extends Fragment {
 

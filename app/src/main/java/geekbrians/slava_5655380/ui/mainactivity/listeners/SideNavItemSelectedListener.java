@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.googleplusdemo;
+package geekbrians.slava_5655380.ui.mainactivity.listeners;
 
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
@@ -47,7 +47,7 @@ public class SideNavItemSelectedListener
   }
 
   private void showToolSnackBar() {
-    Snackbar.make(navigation, "Tool", Snackbar.LENGTH_SHORT).show();
+    Snackbar.make(navigation, "Настройки", Snackbar.LENGTH_SHORT).show();
   }
 
   private void showShareSnackBar() {

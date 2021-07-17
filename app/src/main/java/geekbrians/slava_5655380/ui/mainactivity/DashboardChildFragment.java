@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.googleplusdemo;
+package geekbrians.slava_5655380.ui.mainactivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import geekbrians.slava_5655380.R;
+import geekbrians.slava_5655380.TimberLogger;
 
 public class DashboardChildFragment extends Fragment {
 

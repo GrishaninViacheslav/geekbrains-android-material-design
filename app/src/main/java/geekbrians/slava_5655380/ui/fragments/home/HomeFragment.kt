@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.ui.fragments.pictureoftheday
+package geekbrians.slava_5655380.ui.fragments.home
 
 import android.content.Intent
 import android.net.Uri
@@ -15,10 +15,10 @@ import geekbrians.slava_5655380.R
 import geekbrians.slava_5655380.databinding.DFragmentMainBinding
 import geekbrians.slava_5655380.ui.viewmodels.pictureoftheday.PictureOfTheDayViewModel
 
-class PictureOfTheDayFragment(val name: String = "PictureOfTheDayFragment") : Fragment() {
+class HomeFragment(val name: String = "PictureOfTheDayFragment") : Fragment() {
 
     companion object {
-        fun newInstance() = PictureOfTheDayFragment()
+        fun newInstance() = HomeFragment()
     }
 
     private val viewModel: PictureOfTheDayViewModel by lazy {
@@ -65,7 +65,7 @@ class PictureOfTheDayFragment(val name: String = "PictureOfTheDayFragment") : Fr
                     //showSuccess()
                     with(binding) {
                         imageView.load(url) {
-                            lifecycle(this@PictureOfTheDayFragment)
+                            lifecycle(this@HomeFragment)
                             error(R.drawable.ic_load_error_vector)
                             placeholder(R.drawable.ic_no_photo_vector)
                         }

@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.googleplusdemo;
+package geekbrians.slava_5655380.ui.mainactivity;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +14,8 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
 import geekbrians.slava_5655380.R;
+import geekbrians.slava_5655380.ui.mainactivity.listeners.BottomNavItemSelectedListener;
+import geekbrians.slava_5655380.ui.mainactivity.listeners.SideNavItemSelectedListener;
 
 public class MainActivity extends AppCompatActivity {
 

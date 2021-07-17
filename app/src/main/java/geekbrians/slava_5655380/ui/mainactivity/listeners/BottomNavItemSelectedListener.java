@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.googleplusdemo;
+package geekbrians.slava_5655380.ui.mainactivity.listeners;
 
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
@@ -26,11 +26,17 @@ public class BottomNavItemSelectedListener
     if (itemId == R.id.navigation_home) {
       viewPager.setCurrentItem(0);
       return true;
-    } else if (itemId == R.id.navigation_dashboard) {
+    } else if (itemId == R.id.navigation_earth) {
       viewPager.setCurrentItem(1);
       return true;
-    } else if (itemId == R.id.navigation_notifications) {
+    } else if (itemId == R.id.navigation_moon) {
       viewPager.setCurrentItem(2);
+      return true;
+    } else if (itemId == R.id.navigation_mars) {
+      viewPager.setCurrentItem(3);
+      return true;
+    } else if (itemId == R.id.navigation_space) {
+      viewPager.setCurrentItem(4);
       return true;
     }
     return false;

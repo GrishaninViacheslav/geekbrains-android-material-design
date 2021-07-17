@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.googleplusdemo;
+package geekbrians.slava_5655380.ui.views.behaviors;
 
 import android.content.Context;
 import android.util.AttributeSet;

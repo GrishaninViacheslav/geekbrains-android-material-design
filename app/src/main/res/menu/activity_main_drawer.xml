@@ -7,23 +7,23 @@
     <item
       android:id="@+id/nav_tool"
       android:icon="@drawable/ic_menu_manage"
-      android:title="Tools" />
+      android:title="@string/nav_settings" />
     <item
       android:id="@+id/nav_gallery"
       android:icon="@drawable/ic_menu_gallery"
-      android:title="Gallery" />
+      android:title="@string/nav_gallery" />
   </group>
 
-  <item android:title="Communicate">
+  <item android:title="@string/nav_title_communicate">
     <menu>
       <item
         android:id="@+id/nav_share"
         android:icon="@drawable/ic_menu_share"
-        android:title="Share" />
+        android:title="@string/nav_share" />
       <item
         android:id="@+id/nav_send"
         android:icon="@drawable/ic_menu_send"
-        android:title="Send" />
+        android:title="@string/nav_send" />
     </menu>
   </item>
 

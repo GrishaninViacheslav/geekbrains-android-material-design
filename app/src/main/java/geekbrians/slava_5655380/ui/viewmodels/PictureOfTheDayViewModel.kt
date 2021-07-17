@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import geekbrians.slava_5655380.BuildConfig
 import geekbrians.slava_5655380.domain.model.PODRetrofitImpl
 import geekbrians.slava_5655380.domain.model.PODServerResponseData
-import geekbrians.slava_5655380.ui.fragments.pictureoftheday.PictureOfTheDayData
+import geekbrians.slava_5655380.ui.fragments.home.PictureOfTheDayData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

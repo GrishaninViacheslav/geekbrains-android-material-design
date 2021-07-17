@@ -11,7 +11,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="geekbrians.slava_5655380.googleplusdemo.MainActivity">
+    tools:context="geekbrians.slava_5655380.ui.mainactivity.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
       android:id="@+id/app_bar"
@@ -29,7 +29,7 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <geekbrians.slava_5655380.googleplusdemo.CustomViewPager
+    <geekbrians.slava_5655380.ui.views.CustomViewPager
       android:id="@+id/view_pager"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
@@ -41,7 +41,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="bottom"
       android:background="?android:attr/windowBackground"
-      app:layout_behavior="geekbrians.slava_5655380.googleplusdemo.BottomNavigationBehavior"
+      app:layout_behavior="geekbrians.slava_5655380.ui.views.behaviors.BottomNavigationBehavior"
       app:menu="@menu/navigation" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -53,7 +53,7 @@
       app:fabSize="normal"
       app:layout_anchor="@id/navigation"
       app:layout_anchorGravity="top|end"
-      app:layout_behavior="geekbrians.slava_5655380.googleplusdemo.BottomNavigationFABBehavior"
+      app:layout_behavior="geekbrians.slava_5655380.ui.views.behaviors.BottomNavigationFABBehavior"
       app:srcCompat="@drawable/ic_add_white_24dp"
       app:useCompatPadding="true" />
 

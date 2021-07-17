@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.googleplusdemo;
+package geekbrians.slava_5655380.ui.fragments.moon;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import geekbrians.slava_5655380.R;
+import geekbrians.slava_5655380.TimberLogger;
 
 public class NotificationFragment extends Fragment {
 
