@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.ui.fragments
+package geekbrians.slava_5655380.ui.fragments.earth
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle

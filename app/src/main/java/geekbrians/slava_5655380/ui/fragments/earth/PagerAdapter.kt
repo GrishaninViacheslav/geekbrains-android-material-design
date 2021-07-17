@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.ui.fragments
+package geekbrians.slava_5655380.ui.fragments.earth
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

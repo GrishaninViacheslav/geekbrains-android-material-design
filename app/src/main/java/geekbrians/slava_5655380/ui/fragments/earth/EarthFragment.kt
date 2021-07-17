@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.ui
+package geekbrians.slava_5655380.ui.fragments.earth
 
 import android.graphics.Color
 import android.os.Bundle
@@ -9,12 +9,10 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import geekbrians.slava_5655380.R
-import geekbrians.slava_5655380.databinding.FragmentHomeBinding
-import geekbrians.slava_5655380.ui.fragments.DemoTabFragment
-import geekbrians.slava_5655380.ui.fragments.PagerAdapter
+import geekbrians.slava_5655380.databinding.FragmentEarthBinding
 
-class HomeFragment(val name: String = "HomeFragment") : Fragment() {
-    private var _binding: FragmentHomeBinding? = null
+class EarthFragment(val name: String = "HomeFragment") : Fragment() {
+    private var _binding: FragmentEarthBinding? = null
     private val binding get() = _binding!!
     private lateinit var toolbar: Toolbar
 
@@ -47,7 +45,7 @@ class HomeFragment(val name: String = "HomeFragment") : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentEarthBinding.inflate(inflater, container, false)
         toolbar = binding.toolbar
         (activity as AppCompatActivity).setSupportActionBar(toolbar); // TODO: попробоавть вызывать setSupportActionBar +  menuInflater.inflate при открытии фрагмен
         initViewPagerAndTabs()
@@ -56,6 +54,6 @@ class HomeFragment(val name: String = "HomeFragment") : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = HomeFragment()
+        fun newInstance() = EarthFragment()
     }
 }

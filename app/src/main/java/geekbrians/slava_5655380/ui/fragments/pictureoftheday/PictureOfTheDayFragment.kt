@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import coil.api.load
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import geekbrians.slava_5655380.R
-import geekbrians.slava_5655380.databinding.MainFragmentBinding
+import geekbrians.slava_5655380.databinding.FragmentMainBinding
 import geekbrians.slava_5655380.ui.viewmodels.pictureoftheday.PictureOfTheDayViewModel
 
 class PictureOfTheDayFragment(val name: String = "PictureOfTheDayFragment") : Fragment() {
@@ -26,7 +26,7 @@ class PictureOfTheDayFragment(val name: String = "PictureOfTheDayFragment") : Fr
     private val viewModel: PictureOfTheDayViewModel by lazy {
         ViewModelProviders.of(this).get(PictureOfTheDayViewModel::class.java)
     }
-    private var _binding: MainFragmentBinding? = null
+    private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
     private lateinit var toolbar: Toolbar
@@ -51,7 +51,7 @@ class PictureOfTheDayFragment(val name: String = "PictureOfTheDayFragment") : Fr
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = MainFragmentBinding.inflate(inflater, container, false)
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
 
         // TODO: как это вынести в onCreate?
         toolbar = binding.toolbar
