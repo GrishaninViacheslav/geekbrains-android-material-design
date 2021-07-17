@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import geekbrians.slava_5655380.R
 import geekbrians.slava_5655380.ui.viewmodels.PartThreeViewModel
 
-class PartThreeFragment : Fragment() {
+class DemoTabFragment : Fragment() {
 
     companion object {
-        fun newInstance() = PartThreeFragment()
+        fun newInstance() = DemoTabFragment()
     }
 
     private lateinit var viewModel: PartThreeViewModel
@@ -21,7 +21,7 @@ class PartThreeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.part_three_fragment, container, false)
+        return inflater.inflate(R.layout.demo_tab_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

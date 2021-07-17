@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProviders
 import coil.api.load
@@ -15,7 +17,7 @@ import geekbrians.slava_5655380.R
 import geekbrians.slava_5655380.databinding.MainFragmentBinding
 import geekbrians.slava_5655380.ui.viewmodels.pictureoftheday.PictureOfTheDayViewModel
 
-class PictureOfTheDayFragment : Fragment() {
+class PictureOfTheDayFragment(val name: String = "PictureOfTheDayFragment") : Fragment() {
 
     companion object {
         fun newInstance() = PictureOfTheDayFragment()
@@ -27,6 +29,7 @@ class PictureOfTheDayFragment : Fragment() {
     private var _binding: MainFragmentBinding? = null
     private val binding get() = _binding!!
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
+    private lateinit var toolbar: Toolbar
 
     private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
@@ -49,6 +52,10 @@ class PictureOfTheDayFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = MainFragmentBinding.inflate(inflater, container, false)
+
+        // TODO: как это вынести в onCreate?
+        toolbar = binding.toolbar
+        (activity as AppCompatActivity).setSupportActionBar(toolbar); // TODO: попробоавть вызывать setSupportActionBar +  menuInflater.inflate при открытии фрагмен
         return binding.root
     }
 
