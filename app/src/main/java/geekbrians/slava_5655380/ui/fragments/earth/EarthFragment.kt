@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import geekbrians.slava_5655380.R
-import geekbrians.slava_5655380.databinding.FragmentEarthBinding
+import geekbrians.slava_5655380.databinding.DFragmentEarthBinding
 
 class EarthFragment(val name: String = "HomeFragment") : Fragment() {
-    private var _binding: FragmentEarthBinding? = null
+    private var _binding: DFragmentEarthBinding? = null
     private val binding get() = _binding!!
     private lateinit var toolbar: Toolbar
 
@@ -45,7 +45,7 @@ class EarthFragment(val name: String = "HomeFragment") : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentEarthBinding.inflate(inflater, container, false)
+        _binding = DFragmentEarthBinding.inflate(inflater, container, false)
         toolbar = binding.toolbar
         (activity as AppCompatActivity).setSupportActionBar(toolbar); // TODO: попробоавть вызывать setSupportActionBar +  menuInflater.inflate при открытии фрагмен
         initViewPagerAndTabs()

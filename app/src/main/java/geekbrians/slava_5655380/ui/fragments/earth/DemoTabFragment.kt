@@ -21,7 +21,7 @@ class DemoTabFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.demo_tab_fragment, container, false)
+        return inflater.inflate(R.layout.d_demo_tab_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

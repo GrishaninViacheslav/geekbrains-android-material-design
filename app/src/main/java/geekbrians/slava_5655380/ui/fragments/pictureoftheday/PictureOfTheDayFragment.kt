@@ -7,14 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProviders
 import coil.api.load
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import geekbrians.slava_5655380.R
-import geekbrians.slava_5655380.databinding.FragmentMainBinding
+import geekbrians.slava_5655380.databinding.DFragmentMainBinding
 import geekbrians.slava_5655380.ui.viewmodels.pictureoftheday.PictureOfTheDayViewModel
 
 class PictureOfTheDayFragment(val name: String = "PictureOfTheDayFragment") : Fragment() {
@@ -26,36 +24,15 @@ class PictureOfTheDayFragment(val name: String = "PictureOfTheDayFragment") : Fr
     private val viewModel: PictureOfTheDayViewModel by lazy {
         ViewModelProviders.of(this).get(PictureOfTheDayViewModel::class.java)
     }
-    private var _binding: FragmentMainBinding? = null
+    private var _binding: DFragmentMainBinding? = null
     private val binding get() = _binding!!
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
-    private lateinit var toolbar: Toolbar
-
-    private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
-        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-        bottomSheetBehavior.addBottomSheetCallback(object :
-            BottomSheetBehavior.BottomSheetCallback() {
-            override fun onStateChanged(bottomSheet: View, newState: Int) {
-                when (newState) {
-                    BottomSheetBehavior.STATE_HIDDEN -> bottomSheetBehavior.state =
-                        BottomSheetBehavior.STATE_COLLAPSED
-                }
-            }
-
-            override fun onSlide(bottomSheet: View, slideOffset: Float) {}
-        })
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
-
-        // TODO: как это вынести в onCreate?
-        toolbar = binding.toolbar
-        (activity as AppCompatActivity).setSupportActionBar(toolbar); // TODO: попробоавть вызывать setSupportActionBar +  menuInflater.inflate при открытии фрагмен
+        _binding = DFragmentMainBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -67,7 +44,6 @@ class PictureOfTheDayFragment(val name: String = "PictureOfTheDayFragment") : Fr
                     Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
             })
         }
-        setBottomSheetBehavior(binding.bottomSheetContainer)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
