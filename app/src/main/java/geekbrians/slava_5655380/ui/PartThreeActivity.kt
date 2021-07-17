@@ -2,8 +2,11 @@ package geekbrians.slava_5655380.ui
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import geekbrians.slava_5655380.R
@@ -12,10 +15,26 @@ import geekbrians.slava_5655380.ui.fragments.PartThreeFragment
 
 
 class PartThreeActivity : AppCompatActivity() {
+    private lateinit var toolbar: Toolbar
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_part_three)
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         initViewPagerAndTabs()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_top_toolbar, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id: Int = item.getItemId()
+        return if (id == R.id.menu_button_search) {
+            true
+        } else super.onOptionsItemSelected(item)
     }
 
     private fun initViewPagerAndTabs() {
