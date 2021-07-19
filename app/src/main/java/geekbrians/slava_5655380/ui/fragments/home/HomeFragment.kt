@@ -13,7 +13,8 @@ import coil.api.load
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import geekbrians.slava_5655380.R
 import geekbrians.slava_5655380.databinding.DFragmentMainBinding
-import geekbrians.slava_5655380.ui.viewmodels.pictureoftheday.PictureOfTheDayViewModel
+import geekbrians.slava_5655380.ui.viewmodels.home.PictureOfTheDayData
+import geekbrians.slava_5655380.ui.viewmodels.home.PictureOfTheDayViewModel
 
 class HomeFragment(val name: String = "PictureOfTheDayFragment") : Fragment() {
 

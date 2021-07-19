@@ -1,8 +1,8 @@
-package geekbrians.slava_5655380.domain.model
+package geekbrians.slava_5655380.domain.model.apod
 
 import com.google.gson.annotations.SerializedName
 
-data class PODServerResponseData(
+data class ApodServerResponseData(
     @field:SerializedName("copyright") val copyright: String?,
     @field:SerializedName("date") val date: String?,
     @field:SerializedName("explanation") val explanation: String?,

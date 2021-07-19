@@ -4,8 +4,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import geekbrians.slava_5655380.ui.fragments.DashboardFragment
-import geekbrians.slava_5655380.ui.fragments.earth.EarthDashboardChildFragmentA
-import geekbrians.slava_5655380.ui.fragments.earth.EarthDashboardChildFragmentB
+import geekbrians.slava_5655380.ui.fragments.earth.EpicFragment
+import geekbrians.slava_5655380.ui.fragments.earth.NeowsFragment
 import geekbrians.slava_5655380.ui.fragments.home.HomeFragment
 import geekbrians.slava_5655380.ui.fragments.mars.MarsFragment
 import geekbrians.slava_5655380.ui.fragments.moon.MoonDashboardChildFragmentA
@@ -16,14 +16,14 @@ class AppFragmentPageAdapter(fm: FragmentManager?) : FragmentPagerAdapter(
     fm!!, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
 ) {
 
-    val earthChildDashboardFragments = arrayListOf<Fragment>(
-        EarthDashboardChildFragmentA.newInstance("Earth"),
-        EarthDashboardChildFragmentB.newInstance("Earth"),
+    val earthChildDashboardFragments = arrayListOf<Pair<String, Fragment>>(
+        Pair("EPIC", EpicFragment.newInstance()),
+        Pair("Neows", NeowsFragment.newInstance()),
     )
 
-    val moonChildDashboardFragments = arrayListOf<Fragment>(
-        MoonDashboardChildFragmentA.newInstance("Moon"),
-        MoonDashboardChildFragmentB.newInstance("Moon"),
+    val moonChildDashboardFragments = arrayListOf<Pair<String, Fragment>>(
+        Pair("Dashboard 0", MoonDashboardChildFragmentA.newInstance("Moon")),
+        Pair("Dashboard 1", MoonDashboardChildFragmentB.newInstance("Moon"))
     )
 
     override fun getItem(position: Int): Fragment {

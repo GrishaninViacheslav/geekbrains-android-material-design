@@ -2,7 +2,6 @@ package geekbrians.slava_5655380.ui.fragments.moon
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -33,7 +32,6 @@ class MoonDashboardChildFragmentB : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val tvDashBoard = view.findViewById<TextView>(R.id.tv_dashboard)
         val name = requireArguments().getString(ARGUMENT_NAME)
-        Log.d("[MYLOG]", "EarthDashboardChildFragmentB")
         tvDashBoard.setText(R.string.life_is_a_very_funny_proposition_after_all)
         tvDashBoard.append("\n")
         tvDashBoard.append("\n")

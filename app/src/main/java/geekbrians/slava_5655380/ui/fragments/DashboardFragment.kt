@@ -11,7 +11,7 @@ import com.google.android.material.tabs.TabLayout
 import geekbrians.slava_5655380.R
 import geekbrians.slava_5655380.TimberLogger
 
-class DashboardFragment(val childDashboardFragments: ArrayList<Fragment>) : Fragment() {
+class DashboardFragment(val childDashboardFragments: ArrayList<Pair<String, Fragment>>) : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -47,7 +47,7 @@ class DashboardFragment(val childDashboardFragments: ArrayList<Fragment>) : Frag
             fm!!, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
         ) {
         override fun getItem(position: Int): Fragment {
-            return childDashboardFragments[position]
+            return childDashboardFragments[position].second
         }
 
         override fun getCount(): Int {
@@ -55,14 +55,14 @@ class DashboardFragment(val childDashboardFragments: ArrayList<Fragment>) : Frag
         }
 
         override fun getPageTitle(position: Int): CharSequence? {
-            return "Dashboard $position"
+            return childDashboardFragments[position].first
         }
     }
 
     companion object {
         private const val ARG_NAME = "arg_name"
         @JvmStatic
-        fun newInstance(name: String?, childDashboardFragments: ArrayList<Fragment>): DashboardFragment {
+        fun newInstance(name: String?, childDashboardFragments: ArrayList<Pair<String, Fragment>>): DashboardFragment {
             val bundle = Bundle()
             bundle.putString(ARG_NAME, name)
             val dashboardFragment = DashboardFragment(childDashboardFragments)
