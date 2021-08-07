@@ -1,19 +1,18 @@
-package geekbrians.slava_5655380.ui.viewmodels.pictureoftheday
+package geekbrians.slava_5655380.ui.viewmodels.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import geekbrians.slava_5655380.BuildConfig
-import geekbrians.slava_5655380.domain.model.PODRetrofitImpl
-import geekbrians.slava_5655380.domain.model.PODServerResponseData
-import geekbrians.slava_5655380.ui.fragments.pictureoftheday.PictureOfTheDayData
+import geekbrians.slava_5655380.domain.model.apod.ApodRetrofitImpl
+import geekbrians.slava_5655380.domain.model.apod.ApodServerResponseData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class PictureOfTheDayViewModel(
     private val liveDataForViewToObserve: MutableLiveData<PictureOfTheDayData> = MutableLiveData(),
-    private val retrofitImpl: PODRetrofitImpl = PODRetrofitImpl()
+    private val retrofitImpl: ApodRetrofitImpl = ApodRetrofitImpl()
 ) :
     ViewModel() {
 
@@ -29,10 +28,10 @@ class PictureOfTheDayViewModel(
             PictureOfTheDayData.Error(Throwable("You need API key"))
         } else {
             retrofitImpl.getRetrofitImpl().getPictureOfTheDay(apiKey).enqueue(object :
-                Callback<PODServerResponseData> {
+                Callback<ApodServerResponseData> {
                 override fun onResponse(
-                    call: Call<PODServerResponseData>,
-                    response: Response<PODServerResponseData>
+                    call: Call<ApodServerResponseData>,
+                    response: Response<ApodServerResponseData>
                 ) {
                     if (response.isSuccessful && response.body() != null) {
                         liveDataForViewToObserve.value =
@@ -49,7 +48,7 @@ class PictureOfTheDayViewModel(
                     }
                 }
 
-                override fun onFailure(call: Call<PODServerResponseData>, t: Throwable) {
+                override fun onFailure(call: Call<ApodServerResponseData>, t: Throwable) {
                     liveDataForViewToObserve.value = PictureOfTheDayData.Error(t)
                 }
             })

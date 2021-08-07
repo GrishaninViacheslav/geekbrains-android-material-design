@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.ui.fragments.pictureoftheday
+package geekbrians.slava_5655380.ui.fragments.home
 
 import android.content.Intent
 import android.net.Uri
@@ -12,43 +12,28 @@ import androidx.lifecycle.ViewModelProviders
 import coil.api.load
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import geekbrians.slava_5655380.R
-import geekbrians.slava_5655380.databinding.MainFragmentBinding
-import geekbrians.slava_5655380.ui.viewmodels.pictureoftheday.PictureOfTheDayViewModel
+import geekbrians.slava_5655380.databinding.DFragmentMainBinding
+import geekbrians.slava_5655380.ui.viewmodels.home.PictureOfTheDayData
+import geekbrians.slava_5655380.ui.viewmodels.home.PictureOfTheDayViewModel
 
-class PictureOfTheDayFragment : Fragment() {
+class HomeFragment(val name: String = "PictureOfTheDayFragment") : Fragment() {
 
     companion object {
-        fun newInstance() = PictureOfTheDayFragment()
+        fun newInstance() = HomeFragment()
     }
 
     private val viewModel: PictureOfTheDayViewModel by lazy {
         ViewModelProviders.of(this).get(PictureOfTheDayViewModel::class.java)
     }
-    private var _binding: MainFragmentBinding? = null
+    private var _binding: DFragmentMainBinding? = null
     private val binding get() = _binding!!
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
-
-    private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
-        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-        bottomSheetBehavior.addBottomSheetCallback(object :
-            BottomSheetBehavior.BottomSheetCallback() {
-            override fun onStateChanged(bottomSheet: View, newState: Int) {
-                when (newState) {
-                    BottomSheetBehavior.STATE_HIDDEN -> bottomSheetBehavior.state =
-                        BottomSheetBehavior.STATE_COLLAPSED
-                }
-            }
-
-            override fun onSlide(bottomSheet: View, slideOffset: Float) {}
-        })
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = MainFragmentBinding.inflate(inflater, container, false)
+        _binding = DFragmentMainBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -60,7 +45,6 @@ class PictureOfTheDayFragment : Fragment() {
                     Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
             })
         }
-        setBottomSheetBehavior(binding.bottomSheetContainer)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -82,7 +66,7 @@ class PictureOfTheDayFragment : Fragment() {
                     //showSuccess()
                     with(binding) {
                         imageView.load(url) {
-                            lifecycle(this@PictureOfTheDayFragment)
+                            lifecycle(this@HomeFragment)
                             error(R.drawable.ic_load_error_vector)
                             placeholder(R.drawable.ic_no_photo_vector)
                         }

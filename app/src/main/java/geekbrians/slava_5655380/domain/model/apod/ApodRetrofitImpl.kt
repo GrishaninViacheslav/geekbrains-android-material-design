@@ -1,4 +1,4 @@
-package geekbrians.slava_5655380.domain.model
+package geekbrians.slava_5655380.domain.model.apod
 
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
@@ -8,17 +8,17 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 
-class PODRetrofitImpl {
+class ApodRetrofitImpl {
 
     private val baseUrl = "https://api.nasa.gov/"
 
-    fun getRetrofitImpl(): PictureOfTheDayAPI {
+    fun getRetrofitImpl(): ApodAPI {
         val podRetrofit = Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
             .client(createOkHttpClient(PODInterceptor()))
             .build()
-        return podRetrofit.create(PictureOfTheDayAPI::class.java)
+        return podRetrofit.create(ApodAPI::class.java)
     }
 
     private fun createOkHttpClient(interceptor: Interceptor): OkHttpClient {
