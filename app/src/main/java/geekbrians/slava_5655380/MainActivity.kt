@@ -2,7 +2,7 @@ package geekbrians.slava_5655380
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import geekbrians.slava_5655380.ui.main.MainFragment
+import geekbrians.slava_5655380.ui.fragments.pictureoftheday.PictureOfTheDayFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
+                .replace(R.id.container, PictureOfTheDayFragment.newInstance())
                 .commitNow()
         }
     }
